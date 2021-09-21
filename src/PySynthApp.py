@@ -1,61 +1,69 @@
 import tkinter as tk
+import tkmacosx as tkmc
+from tkmacosx import Button
 from tkinter import filedialog, Text
 import os
 
 root = tk.Tk()
+root.title("PySynth")
+root.geometry("1000x500")
 
-canvas = tk.Canvas(root, height=500, width=300, bg="#8cb923")
-canvas.pack()
+# White Keys
 
-header = tk.Frame(root, bg="#3C00E0")
-header.place(relwidth=1, relheight=0.2)
+# C
+c_key = tkmc.Button(root, padx=25, pady=100, bg='white')
+c_key.grid(row=0, column=0, rowspan=2, columnspan=3, sticky='nsew')
 
-#C
-c_key = tk.Button(root, text="C", padx=25, pady=100, bg="#8cb923")
-c_key.pack(side=tk.LEFT)
+# D
+d_key = tkmc.Button(root, padx=25, pady=100, bg='white')
+d_key.grid(row=0, column=3, rowspan=2, columnspan=3, sticky='nsew')
 
-#C-Sharp
-c_sh_key = tk.Button(root, text="C#", padx=25, pady=100, fg= "black", bg="black")
-c_sh_key.pack(side=tk.LEFT)
+# E
+e_key = tkmc.Button(root, padx=25, pady=100, bg='white')
+e_key.grid(row=0, column=6, rowspan=2, columnspan=3, sticky='nsew')
 
-#D
-d_key = tk.Button(root, text="D", padx=25, pady=100, bg="#8cb923")
-d_key.pack(side=tk.LEFT)
+# F
+f_key = tkmc.Button(root, padx=25, pady=100, bg='white')
+f_key.grid(row=0, column=9, rowspan=2, columnspan=3, sticky='nsew')
 
-#D-Sharp
-d_sh_key = tk.Button(root, text="D#", padx=25, pady=100, bg="#8cb923")
-d_sh_key.pack(side=tk.LEFT)
+# G
+g_key = tkmc.Button(root, padx=25, pady=100, bg='white')
+g_key.grid(row=0, column=12, rowspan=2, columnspan=3, sticky='nsew')
 
-#E
-e_key = tk.Button(root, text="E", padx=25, pady=100, bg="#8cb923")
-e_key.pack(side=tk.LEFT)
+# A
+a_key = tkmc.Button(root, padx=25, pady=100, bg='white')
+a_key.grid(row=0, column=15, rowspan=2, columnspan=3, sticky='nsew')
 
-#F
-f_key = tk.Button(root, text="F", padx=25, pady=100, bg="#8cb923")
-f_key.pack(side=tk.LEFT)
+# B
+b_key = tkmc.Button(root, padx=25, pady=100, bg='white')
+b_key.grid(row=0, column=18, rowspan=2, columnspan=3, sticky='nsew')
 
-#F-Sharp
-f_sh_key = tk.Button(root, text="F#", padx=25, pady=100, bg="#8cb923")
-f_sh_key.pack(side=tk.LEFT)
+# Black Keys
 
-#G
-g_key = tk.Button(root, text="G", padx=25, pady=100, bg="#8cb923")
-g_key.pack(side=tk.LEFT)
+# C-Sharp
+c_sh_key = tkmc.Button(root, padx=13, pady=5, bg='black')
+c_sh_key.grid(row=0, column=2, rowspan=1, columnspan=2, sticky='nsew')
 
-#G-Sharp
-g_sh_key = tk.Button(root, text="G#", padx=25, pady=100, bg="#8cb923")
-g_sh_key.pack(side=tk.LEFT)
+# D-Sharp
+d_sh_key = tkmc.Button(root, padx=13, pady=65, bg='black')
+d_sh_key.grid(row=0, column=5, rowspan=1, columnspan=2, sticky='nsew')
 
-#A
-a_key = tk.Button(root, text="A", padx=25, pady=100, bg="#8cb923")
-a_key.pack(side=tk.LEFT)
+# F-Sharp
+f_sh_key = tkmc.Button(root, padx=13, pady=65, bg='black')
+f_sh_key.grid(row=0, column=11, rowspan=1, columnspan=2, sticky='nsew')
 
-#A-Sharp
-a_sh_key = tk.Button(root, text="A#", padx=25, pady=100, bg="#8cb923")
-a_sh_key.pack(side=tk.LEFT)
+# G-Sharp
+g_sh_key = tkmc.Button(root, padx=13, pady=65, bg='black')
+g_sh_key.grid(row=0, column=14, rowspan=1, columnspan=2, sticky='nsew')
 
-#B
-b_key = tk.Button(root, text="B", padx=25, pady=100, bg="#8cb923")
-b_key.pack(side=tk.LEFT)
+# A-Sharp
+a_sh_key = tkmc.Button(root, padx=13, pady=65, bg='black')
+a_sh_key.grid(row=0, column=17, rowspan=1, columnspan=2, sticky='nsew')
+
+for i in range(7 * 3):
+    root.columnconfigure(i, weight=1)
+
+for i in range(2):
+    root.rowconfigure(i, weight=1)
 
 root.mainloop()
