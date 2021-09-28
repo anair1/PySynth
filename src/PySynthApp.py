@@ -1,6 +1,6 @@
 import tkinter as tk
 import tkmacosx as tkmc
-from tkinter import filedialog, Text
+# from tkinter import filedialog, Text
 import PyoFunctionality as PF
 
 root = tk.Tk()
